@@ -12,20 +12,20 @@ public class OrdenarArreglo {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        int [] a  = {7,2,4,8,3,9,1,5,10,6};
-        int aux = 0;
+        int [] a  = {7,2,4,8,3,9,1,5,10,6};   // Arreglo a Ordenar.
+        int aux = 0;                          // Variable int auxiliar para poder hacer el intercambio de valores entre pos.n-1 y pos.n
 
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 1; j < (a.length - i); j++) {
-                if (a[j - 1] > a[j]) {
-                    aux = a[j - 1];
-                    System.out.println("Auxiliar:\t"+aux);
-                    a[j - 1] = a[j];
-                    System.out.println("a["+(j-1)+"]"+"="+a[j]);
-                    a[j] = aux;
-                    System.out.println("a["+j+"]"+"="+a[j]);
+        for (int i = 0; i < a.length; i++) {    // Con este for recorremos el arreglo en forma vertical, para llegar a la posicion n-1
+            for (int j = 1; j < (a.length - i); j++) { // Gracias a este for recorremos el arreglo y,
+                if (a[j - 1] > a[j]) {                 // Luego evaluamos que termino es mayor dentro del arreglo para luego,
+                    aux = a[j - 1];                   // Guardar el valor mayor de la posicion j-1
+                    System.out.println("Auxiliar:\t"+aux); //Muestro en pantalla el valor de aux
+                    a[j - 1] = a[j];                  // Se le asigna el valor menor a la posicion j-1, con esto se consigue trasladar los valores menores al principio del arreglo
+                    System.out.println("a["+(j-1)+"]"+"="+a[j]);  // muestro los valores intercambiado del la parte de arriba
+                    a[j] = aux;                       // Por ultimo dejamos asignado el valor mayor a la posicion siguiente de j-1, esta seria la posicion j.
+                    System.out.println("a["+j+"]"+"="+a[j]);  //Muestro por pantalla el cambio realizado del valor mayor a la pos. j
                 
-            /*int [] a  = {7,2,4,8,3,9,1,5,10,6};
+            /*int [] a  = {7,2,4,8,3,9,1,5,10,6};     Pequeño Ruteo para apreciar lo que hace el algoritmo.
             i   j   length  length-i    a[j-1]  a[j]        temporal     a[j-1]      a[j]
             0   1   10      10           a[0]=7  a[1]=2      7           a[0]=2     a[1]=7          
             0   2   10      10           a[1]=2  a[2]=4      --         
